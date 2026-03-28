@@ -1,3 +1,7 @@
 datasets/
 *.zip
 *.pt
+yolo-helmet/
+runs/
+outputs/
+data/
