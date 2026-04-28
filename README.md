@@ -46,7 +46,20 @@ pip install ultralytics opencv-python pandas matplotlib torch
 
 - **Source**: [Hard Hat Workers Dataset – Roboflow](https://public.roboflow.com/object-detection/hard-hat-workers)
 - Format: YOLOv8 (images + YOLO annotation `.txt` files)
-- Place the dataset in `datasets/helmet_yolo/`
+
+**Download and setup:**
+1. Download the dataset from the link above (choose **YOLOv8 format**)
+2. Place it so the structure looks like this:
+```
+detection_helmet/
+└── datasets/
+    └── helmet_yolo/
+        ├── images/
+│       │   ├── train/
+│       │   └── val/
+        ├── labels/
+        └── data.yaml
+```
 
 ## How to Run
 

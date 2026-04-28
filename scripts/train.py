@@ -1,10 +1,11 @@
 from ultralytics import YOLO
 
+
 if __name__ == '__main__':
     model = YOLO("yolov8s.pt")
 
     results = model.train(
-        data="D:/Github/Cho_repo/detection_helmet/datasets/helmet_yolo/data.yaml",
+        data="datasets/helmet_yolo/data.yaml",
         epochs=50,
         imgsz=640,
         batch=16,
