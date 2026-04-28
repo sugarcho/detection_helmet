@@ -11,7 +11,7 @@ from pathlib import Path
 
 matplotlib.use("Agg")
 
-# ── Paths ─────────────────────────────────────────────────────────────────
+# Paths
 BASE_DIR      = Path(__file__).resolve().parent.parent
 TRAIN_DIR     = BASE_DIR / "runs" / "detect" / "runs" / "train" / "helmet_v1"
 RESULTS_CSV   = TRAIN_DIR / "results.csv"
@@ -20,7 +20,7 @@ OUTPUT_DIR    = BASE_DIR / "outputs" / "visualizations"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
-# ── 1. Loss & mAP Curves ──────────────────────────────────────────────────
+# 1. Loss & mAP Curves
 def plot_training_curves():
     if not RESULTS_CSV.exists():
         print(f"[WARNING] results.csv not found at: {RESULTS_CSV}")
@@ -34,7 +34,7 @@ def plot_training_curves():
     fig.suptitle("YOLOv8 Training Results – Helmet Detection",
                  fontsize=14, fontweight="bold")
 
-    # --- Loss plots ---
+    # Loss plots
     loss_cfg = [
         ("train/box_loss", "val/box_loss",  "Box Loss",            axes[0, 0]),
         ("train/cls_loss", "val/cls_loss",  "Classification Loss", axes[0, 1]),
@@ -48,7 +48,7 @@ def plot_training_curves():
         ax.set_title(title); ax.set_xlabel("Epoch"); ax.set_ylabel("Loss")
         ax.legend(); ax.grid(True, alpha=0.3)
 
-    # --- mAP / Precision / Recall plots ---
+    # mAP / Precision / Recall plots
     metric_cfg = [
         ("metrics/mAP50(B)",    "mAP@0.5",       axes[1, 0], "green"),
         ("metrics/mAP50-95(B)", "mAP@0.5:0.95",  axes[1, 1], "purple"),
@@ -70,7 +70,7 @@ def plot_training_curves():
     print(f"[SAVED] Training curves  → {out}")
 
 
-# ── 2. Confusion Matrix ───────────────────────────────────────────────────
+# 2. Confusion Matrix
 def plot_confusion_matrix():
     if CONFUSION_PNG.exists():
         out = OUTPUT_DIR / "confusion_matrix.png"
@@ -103,7 +103,7 @@ def _placeholder_cm():
     print(f"[SAVED] Placeholder CM   → {out}")
 
 
-# ── 3. mAP Summary Bar Chart ──────────────────────────────────────────────
+# 3. mAP Summary Bar Chart
 def plot_map_summary():
     if not RESULTS_CSV.exists():
         return
@@ -142,7 +142,7 @@ def plot_map_summary():
     print(f"[SAVED] mAP summary      → {out}")
 
 
-# ── Entry point ───────────────────────────────────────────────────────────
+# Entry point
 if __name__ == "__main__":
     print("=" * 55)
     print("  Helmet Detection – Training Visualization (YOLOv8)")

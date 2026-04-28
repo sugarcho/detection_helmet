@@ -76,7 +76,7 @@ def draw_hud(frame, counts, frame_no, fps):
     return frame
 
 
-# ── Main ──────────────────────────────────────────────────────────────────
+# Main
 def run_video_inference():
     if not WEIGHTS.exists():
         print(f"[ERROR] Weights not found: {WEIGHTS}")

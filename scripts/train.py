@@ -16,7 +16,7 @@ if __name__ == '__main__':
         name="helmet_v1",
         exist_ok=True,
         device="0",
-        workers=4,      # Windows 建議設 4
+        workers=4,
     )
 
     print("Best mAP50:", results.results_dict["metrics/mAP50(B)"])

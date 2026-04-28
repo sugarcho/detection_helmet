@@ -56,7 +56,7 @@ def annotate_frame(img, result):
     return annotated, counts
 
 
-# ── Main ──────────────────────────────────────────────────────────────────
+# Main
 def run_inference():
     if not WEIGHTS.exists():
         print(f"[ERROR] Weights not found: {WEIGHTS}")
