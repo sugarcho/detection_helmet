@@ -5,3 +5,4 @@ yolo-helmet/
 runs/
 outputs/
 data/
+!datasets/helmet_yolo/data.yaml

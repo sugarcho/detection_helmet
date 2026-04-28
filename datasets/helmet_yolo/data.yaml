@@ -1,0 +1,10 @@
+path: datasets/helmet_yolo
+
+train: images/train
+val: images/val
+
+nc: 3
+names:
+  0: helmet
+  1: head
+  2: person
