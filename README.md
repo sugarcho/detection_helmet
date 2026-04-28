@@ -39,8 +39,16 @@ detection_helmet/
 ## Requirements
 
 ```bash
+pip install -r requirements.txt
+
+# Or manually:
 pip install ultralytics opencv-python pandas matplotlib torch
 ```
+
+Recommended:
+
+Python 3.9+
+GPU with CUDA support (for faster training)
 
 ## Dataset
 
@@ -49,7 +57,7 @@ pip install ultralytics opencv-python pandas matplotlib torch
 
 **Download and setup:**
 1. Download the dataset from the link above (choose **YOLOv8 format**)
-2. Place it so the structure looks like this:
+2. Place it in the following structure:
 ```
 detection_helmet/
 └── datasets/
