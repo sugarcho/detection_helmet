@@ -2,6 +2,17 @@
 
 A real-time helmet detection system using YOLOv8 to identify workers wearing or not wearing helmets in construction site images and videos.
 
+## 🎯 Demo
+
+![Helmet Detection Demo](assets/demo.jpg)
+
+## ✨ Features
+
+- Detects workers with and without safety helmets
+- Supports image and video inference
+- Built with YOLOv8 and Python
+- Designed for construction site safety monitoring
+
 ## Project Structure
 
 ```
